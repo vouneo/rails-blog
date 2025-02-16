@@ -1,18 +1,22 @@
-<div class="w-full h-80 rounded-lg bg-gray-950 flex flex-col group">
-  <% if blog_post.banner_image.attached? %>
-    <%= image_tag blog_post.banner_image, class: "h-64 w-full object-cover rounded-t-lg group-hover-scale-103" %>
-  <% else %>
-    <%= image_tag "image.jpeg", class: "h-64 w-full object-cover rounded-t-lg" %>
-  <% end %>
-
-  <div class="h-16 px-4 py-4">
-      <p class="text-sm text-indigo-100 overflow-hidden font-semibold">
-          <%= blog_post.title %>
-      </p>
+<div class="w-full rounded-lg bg-gray-200 flex flex-col group overflow-hidden">
+  <!-- Contenedor de imagen -->
+  <div class="w-full h-64">
+    <% if blog_post.banner_image.attached? %>
+      <%= image_tag blog_post.banner_image, class: "h-full w-full object-cover" %>
+    <% else %>
+      <%= image_tag "books.jpg", class: "h-full w-full object-cover" %>
+    <% end %>
   </div>
 
-  <div class="w-full flex items-center justify-center p-4">
-    <%= link_to "Read post", blog_post, class: "px-4 py-2 rounded-lg bg-[#d7336d] text-white hover:opacity-90 transition-opacity hover:scale-103" %>
+  <!-- Contenedor de título -->
+  <div class="w-full px-4 py-3">
+    <h2 class="text-xl text-gray-900 font-semibold line-clamp-2">
+      <%= blog_post.title %>
+    </h2>
+  </div>
+
+  <!-- Contenedor del botón -->
+  <div class="w-full px-4 pb-4 mt-auto">
+    <%= link_to "Read post", blog_post, class: "inline-block px-4 py-2 rounded-lg bg-[#d7336d] text-white hover:opacity-90 transition-opacity" %>
   </div>
 </div>
- 23:23 video

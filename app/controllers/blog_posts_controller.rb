@@ -60,7 +60,7 @@ class BlogPostsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blog_post
-      @blog_post = BlogPost.find(params.expect(:id))
+      @blog_post = BlogPost.friendly.find(params.expect(:id))
     end
 
     # Only allow a list of trusted parameters through.
