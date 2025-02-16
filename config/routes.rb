@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admins
   resources :blog_posts, path: 'posts'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

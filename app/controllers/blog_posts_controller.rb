@@ -1,6 +1,6 @@
 class BlogPostsController < ApplicationController
   before_action :set_blog_post, only: %i[ show edit update destroy ]
-
+  before_action :authorize_admin!, except: %i[ index show ]
   # GET /blog_posts or /blog_posts.json
   def index
     @blog_posts = BlogPost.all
@@ -67,4 +67,6 @@ class BlogPostsController < ApplicationController
     def blog_post_params
       params.expect(blog_post: [ :title, :body, :meta_description, :meta_title, :meta_image, :banner_image, :tags ])
     end
+
+
 end

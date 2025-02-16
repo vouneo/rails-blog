@@ -23,6 +23,8 @@
   </head>
 
   <body>
+    <%= render "layouts/admin" if current_admin %>
+    <%= render "layouts/alerts" %>
     <main class="container mx-auto mt-28 px-5 flex">
       <%= yield %>
     </main>
